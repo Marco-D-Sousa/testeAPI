@@ -1,6 +1,6 @@
-import express from 'express';
-import axios from 'axios';
-import compression from 'compression';
+const express = require('express');
+const axios = require('axios');
+const compression = require('compression');
 
 const userURL = "https://mockend.com/juunegreiros/BE-test-api/users";
 const productsURL = "https://mockend.com/juunegreiros/BE-test-api/products";
@@ -11,7 +11,6 @@ app.use(compression());
 
 app.get("/users", async (req, res) => {
     try {
-        //TODO: Ajustar a forma como os dados sao mostrados.
         const response = await axios.get(userURL);
         const users = response.data;
         res.send(users);
@@ -23,7 +22,6 @@ app.get("/users", async (req, res) => {
 
 app.get("/products", async (req, res) => {
     try {
-        //TODO: Ajustar como os dados sao mostrados.
         const response = await axios.get(productsURL);
         const products = response.data;
         res.send(products);
@@ -61,4 +59,4 @@ app.post("/calculate", async (req, res) => {
     }
 });
 
-export default app
+module.exports = { app };

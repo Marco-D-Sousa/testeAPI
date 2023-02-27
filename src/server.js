@@ -1,8 +1,8 @@
 const { app } = require('./app')
 
 const PORT = 3333;
-const baseURL = `http://localhost:${PORT}`
+const serverURL = `http://localhost:${PORT}`;
 
 app.listen(PORT, () => {
-  console.log(`Server running in: ${baseURL}`);
+  console.log(`Server running in: ${serverURL}`);
 })

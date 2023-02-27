@@ -51,7 +51,7 @@ app.post("/calculate", async (req, res) => {
     const responseUsers = await axios.get(userURL);
     const users = responseUsers.data;
 
-    if(userId < users.length || userId > users.length) {
+    if(userId < 1 || userId > users.length) {
       res.status(400).send(`O id de usuário deve estar entre 1 e ${users.length}.`)
       return;
     }

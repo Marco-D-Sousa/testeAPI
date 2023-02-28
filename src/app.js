@@ -1,5 +1,4 @@
 const express = require("express");
-const axios = require("axios");
 const compression = require("compression");
 
 const AppError = require('./errors/AppError');
@@ -12,7 +11,7 @@ app.use(routes);
 
 app.use((err, req, res, next) => {
   if(err instanceof AppError) {
-    return res. status(err.statusCode).json({
+    return res.status(err.statusCode).json({
       status: 'error',
       message: err.message
     })

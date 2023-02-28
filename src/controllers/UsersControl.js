@@ -1,7 +1,7 @@
 const axios = require("axios");
 
-const AppError = require("../utils/AppError");
-const { URL, usersURL, productsURL } = require('../utils/URLs');
+const AppError = require("../errors/AppError");
+const { URL, usersURL, productsURL } = require('../config/URLs');
 
 class UsersControl {
   async index(req, res, next) {

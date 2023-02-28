@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const compression = require("compression");
 
-const AppError = require('./utils/AppError');
+const AppError = require('./errors/AppError');
 const routes = require('./routes');
 
 const app = express();
@@ -24,14 +24,6 @@ app.use((err, req, res, next) => {
     status: 'error',
     message: 'Internal server error'
   });
-});
-
-app.get("/", (req, res) => {
-  res.send(`
-    <p>/users - para receber a lista de usuários.</p>
-    <p>/products - para receber a lista de produtos.</p>
-    <p>/calculate - passando o id(number) do usuário e uma lista([n, n, n, ...]) com os id's dos produtos para receber o resultado.</p>
-  `);
 });
 
 module.exports = { app };

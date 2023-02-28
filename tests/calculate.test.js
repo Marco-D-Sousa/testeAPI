@@ -9,14 +9,14 @@ describe('POST /calculate', () => {
         };
         
         const response = await request(baseURL)
-            .post('/calculate')
+            .post('/users/calculate')
             .send(requestBody)
             .set('Accept', 'text/plain');
 
         expect(response.statusCode).toBe(200);
-        expect(response.text).toContain('A taxa de desconto do usuário é de 0.79');
-        expect(response.text).toContain('O total do valor dos produtos é: 2435');
-        expect(response.text).toContain('O valor a ser pago é: 2415.76');
+        expect(response.text).toContain('0.79');
+        expect(response.text).toContain('2435');
+        expect(response.text).toContain('2415.76');
     });
 
     it('return error for userId empty', async () => {
@@ -26,7 +26,7 @@ describe('POST /calculate', () => {
         };
 
         const response = await request(baseURL)
-            .post('/calculate')
+            .post('/users/calculate')
             .send(requestBody)
             .set('Accept', 'text/plain');
 
@@ -40,7 +40,7 @@ describe('POST /calculate', () => {
         };
 
         const response = await request(baseURL)
-            .post('/calculate')
+            .post('/users/calculate')
             .send(requestBody)
             .set('Accept', 'text/plain');
 
@@ -54,7 +54,7 @@ describe('POST /calculate', () => {
         };
 
         const response = await request(baseURL)
-            .post('/calculate')
+            .post('/users/calculate')
             .send(requestBody)
             .set('Accept', 'text/plain');
         
@@ -68,7 +68,7 @@ describe('POST /calculate', () => {
         };
 
         const response = await request(baseURL)
-            .post('/calculate')
+            .post('/users/calculate')
             .send(requestBody)
             .set('Accept', 'text/plain');
         

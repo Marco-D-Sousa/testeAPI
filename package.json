@@ -11,7 +11,7 @@
     "test": "jest"
   },
   "apidoc": {
-    "name": "Documentacao - testeAPI",
+    "name": "Documentação - testeAPI",
     "template": {
       "forceLanguage": "pt_br"
     }

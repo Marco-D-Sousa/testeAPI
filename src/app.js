@@ -9,6 +9,8 @@ app.use(express.json());
 app.use(compression());
 app.use(routes);
 
+app.use(express.static('public'));
+
 app.use((err, req, res, next) => {
   if(err instanceof AppError) {
     return res.status(err.statusCode).json({
